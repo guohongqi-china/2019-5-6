@@ -1,0 +1,41 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "上传至蒲公英"
+  lane :fasdfasd do
+    # add actions here: https://docs.fastlane.tools/actions
+     gym(
+
+    scheme:"fasdfasd", #项目名称
+
+    export_method:"development",#打包输出种类
+
+    output_directory:"/Users/guohq/Desktop/IPA", # 打包后的 ipa 文件存放的目录
+
+    output_name:"text"  # ipa文件名
+
+    )
+      pgyer(
+      api_key: "f9074ad324f108637cdd2f113fdd79f3", # 从蒲公英项目详情中获取的 apikey
+      user_key: "764ee4d6878da3225d08dfe741d3cff0", # 从蒲公英项目详情中获取的 userkey
+      password: "123456", # 密码
+      update_description: "update by fastlane" # 本次测试更新的文字说明（参数设置）
+    )
+
+  end
+end
